@@ -1,0 +1,39 @@
+# Ignore Python compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore environment variables & API keys
+.env
+*.env
+config.json
+secrets.json
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+*.log
+logs/
+*.sqlite3
+*.db
+
+# Ignore uploads and generated files
+/uploads/
+uploaded_resumes/
+*.pdf
+
+# Ignore AWS credentials (if using AWS CLI)
+~/.aws/
+.aws/
