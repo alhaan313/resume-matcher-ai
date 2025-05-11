@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume History - ATS Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Upload</a>
+        <a href="{{ url_for('history') }}" class="active">History</a>
+    </nav>
+
+    <div class="container">
+        <h1>📜 View Uploaded Resumes</h1>
+        
+        {% if resumes %}
+            {% for resume in resumes %}
+            <div class="resume-card">
+                <h3>📄 {{ resume.original_filename }}</h3>
+                <p>ATS Score: <span class="score">{{ resume.ats_score }}%</span></p>
+                <p>Resume ID: {{ resume.resume_id }}</p>
+                <a href="{{ url_for('view_pdf', resume_id=resume.resume_id) }}" class="btn-download">
+                    📥 Download Resume
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="info-box">
+                No resumes found. Upload your first resume to get started!
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

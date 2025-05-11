@@ -37,3 +37,8 @@ uploaded_resumes/
 # Ignore AWS credentials (if using AWS CLI)
 ~/.aws/
 .aws/
+
+__init__.py
+.gitignore
+requirements.txt
+README.md

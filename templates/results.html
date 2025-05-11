@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - Resume ATS Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Upload</a>
+        <a href="{{ url_for('history') }}">History</a>
+    </nav>
+    
+    <div class="container">
+        <div class="success-box">✅ Resume Analysis Complete!</div>
+        
+        <div class="result-grid">
+            <div class="result-box job-role">
+                <h3>Job Role</h3>
+                <p>{{ job_role }}</p>
+            </div>
+            
+            <div class="result-box skills">
+                <h3>Extracted Skills</h3>
+                <p>{{ skills|join(', ') }}</p>
+            </div>
+            
+            <div class="result-box ats-score">
+                <h3>ATS Score</h3>
+                <p>{{ ats_score }}%</p>
+            </div>
+        </div>
+        
+        <div class="suggestions-box">
+            <h3>📌 Improvement Suggestions</h3>
+            <ul>
+                {% for suggestion in suggestions %}
+                <li>{{ suggestion }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="metadata-box">
+            <h3>📄 Resume Metadata</h3>
+            <p>File Name: {{ filename }}</p>
+            <a href="{{ file_url }}" class="btn-download" download>📥 Download Resume</a>
+        </div>
+    </div>
+</body>
+</html>

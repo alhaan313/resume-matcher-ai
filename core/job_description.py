@@ -1,3 +1,4 @@
+# job_description.py
 # Predefined job descriptions for various roles
 JOB_DESCRIPTIONS = {
     "Software Engineer": "We are looking for a Software Engineer with experience in Python, Java, and cloud services such as AWS or GCP. The candidate should have strong problem-solving skills, knowledge of data structures and algorithms, and experience working with scalable applications.",
